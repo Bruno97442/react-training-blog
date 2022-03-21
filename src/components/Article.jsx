@@ -5,7 +5,7 @@ import { getLinkPath } from '../Routing';
 import './ArticlesList.css';
 import './Animation.css';
 
-const Article = ({ cors, min }) => {
+const Article = ({ cors }) => {
     let { t, b } = cors
     const { title, body } = cors
     const footerStyle = {

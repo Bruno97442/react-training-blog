@@ -23,7 +23,7 @@ const ArticlesPage = () => {
             {blogShow && <h1 className="h1">{title}</h1>}
             <Outlet />
             {
-                blogShow && <ArticlesList pagination="5" />
+                blogShow && <ArticlesList pagination={8} />
             }
         </section>
     )
