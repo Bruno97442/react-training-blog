@@ -1,16 +1,4 @@
 /* composant ABOUT */
-.cAbout{
-    background-color: #fbf8f6;
-}
-
-img {
-    background-color: bisque;
-
-    /* border-radius: 50%; */
-    /* border: 2px black solid; */
-}
-
-
-.author-description {
-    /* border: 2px black solid; */
+.cAbout, .author-image {
+    background-color: #f2f2f2;
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Form, FloatingLabel, Button } from "react-bootstrap";
-
+import './ArticlesList.css';
 
 const SearchBar = ({ onInputChange, value }) => {
     const placeholder = "Type your search... !"
@@ -25,7 +25,7 @@ const SearchBar = ({ onInputChange, value }) => {
         setShowClearBtn(value !== "")
         , [value])
     return (
-        <section>
+        <section className='marginSearchBar'>
             <Form className='my-3'>
                 <Form.Group>
                     <FloatingLabel controlId='searchInput' label={placeholder}>

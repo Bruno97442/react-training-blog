@@ -13,13 +13,15 @@ const ArticlePage = () => {
             articleService.load().then(() => setArticle(articleService.getById(Id)))
     }, [article, Id])
     return (
-        <section className="article">
+        <section className="list">
             <small className="text-muted">
                 <Link className="text-decoration-none" to={getLinkPath('home')}>Home</Link> &lt;
                 <Link className="text-decoration-none" to={getLinkPath('articles')}>Articles</Link> &lt; article
             </small>
-            <h1 className="h1">{article.title}</h1>
+            <div className="text-center border p-5 m-5">
+            <h1 className="h1 " style={{textTransform: 'uppercase'}}>{article.title}</h1>
             <p className="text">{article.body}</p>
+            </div>
         </section>
     )
 }

@@ -1,3 +1,35 @@
 .main-min-height{
     min-height: calc(100vh - 56px - 176px);
+    
 }
+
+.app {
+    background-image: linear-gradient(to bottom right, #384679, #283153);
+}
+
+.change-back{
+    background-image: linear-gradient(to bottom right, #384679, #283153);
+}
+
+.grey{
+    background-color: #F2F2F2;
+}
+/* Transition on page load */
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+        transform: rotateX(-10deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotateX(0);
+    }
+}
+
+.article-page{
+    animation: transitionIn 0.75s;
+}
+
+/* button[type="button"]:hover, button:hover, .btn-hover:hover, .btn:hover, .btn-outline-primary:hover {
+    background-color: #6f42c1!important;
+} */

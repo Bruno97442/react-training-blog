@@ -1,10 +1,10 @@
 import React from 'react';
 import About from '../components/About';
+import '../components/ArticlesList.css';
 
 const AboutPage = () => {
     return (
-        <section className='m-2'>
-            <h1 className='h1'>About us</h1>
+        <section>
             <About/>
         </section>
     );

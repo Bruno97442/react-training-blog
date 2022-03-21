@@ -1,15 +1,16 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import "./About.css";
+import "./Animation.css";
 
 const About = () => {
   return (
-    <section className="cAbout p-2">
-      <h2 className='p-5'>Whazzah</h2>
+    <section className="cAbout p-5">
+      <h1 className="text-center">Whazzah</h1>
       <Container fluid>
-        <Row className="g-2 justify-content-center">
+        <Row className="g-2 justify-content-center pb-5">
           <Col sm="12" md="5">
-            <img src="author.jpg" className="author-image w-100 border" />
+            <img src="/images/author.jpg" className="author-image w-100 border" />
           </Col>
           <Col sm="12" md="7" className="d-flex flex-column justify-content-md-center border">
             <p className="p-1 p-md-2">
