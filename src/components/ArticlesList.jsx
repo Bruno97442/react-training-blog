@@ -1,19 +1,26 @@
 import React, { useEffect, useState } from "react"
-import { Alert, Col, Container as section, Row } from "react-bootstrap";
+import { Alert, Col, Pagination, Row } from "react-bootstrap";
+import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import ArticleService from "../ArticleService"
 import Article from "../components/Article";
+import Loader from "./Loader";
 import SearchBar from "./SearchBar";
 
 const ArticlesList = ({ searchbarOff, pagination, max = 20 }) => {
     let [articleService] = useState(new ArticleService())
     const [articles, setArticles] = useState([])
     const [showArticles, setShowArticles] = useState([])
+    // gestion d'affiche des grids
     const [display] = useState("col")
     const [search, setSearch] = useState("")
     const sizing = {
         list: [12, 8, 8],
         col: [12, 6, 3]
     }
+    const isPageCount = typeof pagination === "number"
+    const [pageCount, setPageCount] = useState(isPageCount ? Math.ceil(articles / pagination) : 0)
+    const [searchParams, setSearchParams] = useSearchParams()
+
     function debounce(fcn, timeout = 400) {
         let timer;
         return (...args) => {
@@ -32,6 +39,12 @@ const ArticlesList = ({ searchbarOff, pagination, max = 20 }) => {
         setSearch(searchInput)
     }
 
+    function paginationHandler() {
+        setPageCount(Math.ceil(articles / pagination))
+        
+
+    }
+
     useEffect(() => {
         if (search.trim() === "") setShowArticles(articles)
         else filter()
@@ -43,13 +56,14 @@ const ArticlesList = ({ searchbarOff, pagination, max = 20 }) => {
             articleService.load().then(articles => {
                 setArticles(articles)
             })
-        let arrTmp = []
-        if (!!max && max > 0) {
-            console.log('"object" :>> ', "object");
-            arrTmp = articles.slice(0, max)
+        // if have props.max parameter
+        let arrTmp = [...articles]
+        if (max && max > 0) {
+            arrTmp = arrTmp.splice(0, max)
         }
         setShowArticles(arrTmp)
-    }, [articleService.getAll()])
+   
+    }, [articles])
     return (
         <section>
             {!searchbarOff && <SearchBar value={search} onInputChange={onSearchChange} />}
@@ -61,14 +75,20 @@ const ArticlesList = ({ searchbarOff, pagination, max = 20 }) => {
                         xs={sizing[display][0]}
                         md={sizing[display][1]}
                         lg={sizing[display][2]}
-                        style={{height: "220px"}}
+                        style={{ height: "220px" }}
                     >
-                        <Article cors={article} min />
+                        <Article cors={article} />
                     </Col>
                     ))
                 }
                 {
-                    !showArticles.length && <Alert>No thing likes " {search} " found !</Alert>
+                    <Pagination />
+                }
+                {
+                    !showArticles.length && !search.length && <Loader className="text-primary" scale="2" />
+                }
+                {
+                    !showArticles.length && search.length && <Alert>No thing likes " {search} " found !</Alert>
                 }
             </Row>
         </section>

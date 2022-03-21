@@ -11,7 +11,6 @@ const ArticlesPage = () => {
     let [blogShow, setBlogShow] = useState(true)
 
     useEffect(() => {
-        console.log('use :>> ', location.pathname, getLinkPath('articles'));
         setBlogShow(
             location.pathname === getLinkPath('articles')
                 ? true
@@ -24,7 +23,7 @@ const ArticlesPage = () => {
             {blogShow && <h1 className="h1">{title}</h1>}
             <Outlet />
             {
-                blogShow && <ArticlesList />
+                blogShow && <ArticlesList pagination="5" />
             }
         </section>
     )

@@ -13,16 +13,6 @@ const Article = ({ cors, min }) => {
         height: "40%",
         background: "linear-gradient(transparent, rgb(255, 255, 255) 60%)"
     }
-    useEffect(() => {
-        console.log('min :>> ', min);
-        if (min) {
-            cors = {
-                ...cors,
-                title: cors.title.substr(0, 12) + "...",
-                body: cors.body.substr(0, 12) + "...",
-            }
-        }
-    }, [min])
     return (
         <article className="shadow article" style={{ height: "100%", maxHeight: "50vh" }}>
             <Card style={{ height: "100%", position: "relative" }}>
