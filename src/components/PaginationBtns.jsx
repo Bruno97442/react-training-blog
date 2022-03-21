@@ -32,7 +32,7 @@ const PaginationBtns = ({ pageCount, currentPage, onClick, displayNone }) => {
                     }
                     <Pagination.Item href={currentPage} active>{currentPage}</Pagination.Item>
                     {
-                        currentPage < (pageCount -1)
+                        currentPage < (pageCount)
                         && <Pagination.Item href={nearChildrenLink(+1)}>{nearChildrenLink(+1)}</Pagination.Item>
                     }
                     {

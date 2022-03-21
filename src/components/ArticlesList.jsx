@@ -19,8 +19,9 @@ const ArticlesList = ({ searchbarOff, pagination, max }) => {
         col: [12, 6, 3]
     }
     // pagination
-    const hasPageCount = typeof parseInt(pagination) === "number"
+    const hasPageCount = typeof parseInt(pagination) === "number" && !!pagination
     const [pageCount, setPageCount] = useState(0)
+
     const [searchParams, setSearchParams] = useSearchParams({ search: "", page: 0 })
     const [search, setSearch] = useState(searchParams.get("search"))
     const [currentPage, setCurrentPage] = useState(searchParams.get("page"))
@@ -53,7 +54,6 @@ const ArticlesList = ({ searchbarOff, pagination, max }) => {
         const correctPage = +currentPage === 0 ? 1 : +currentPage
         const start = (+(correctPage) - 1) * pagination
         // const start = (+(currentPage) - 1) * pagination
-        console.log("'5 pag:>> '",list.length, start, start + pagination, " - ", currentPage, correctPage);
 
         return list.slice(start, start + pagination)
     }
@@ -62,7 +62,6 @@ const ArticlesList = ({ searchbarOff, pagination, max }) => {
         if (articles.length > 1) {
             let tmpArticles = articles
             let params = {}
-            console.log('currentPage :>> ', currentPage);
             if (search.trim() !== "") {
                 tmpArticles = filterBySearchIn(tmpArticles)
                 params.search = search
@@ -84,29 +83,25 @@ const ArticlesList = ({ searchbarOff, pagination, max }) => {
     useEffect(() => {
         if (!articleService.isLoaded())
             articleService.load().then(articles => {
-                articles.forEach((item, key) => item.title = key + " _ " + item.title)
+                articles.forEach((item) => item.body = item.id + " " + item.title)
                 setArticles(articles)
                 // if have props.max parameter
                 let arrTmp = [...articles]
-                console.log("'1 :>> '", arrTmp.length, currentPage, searchParams.get("page") == 0);
                 if (max && max > 0) {
                     arrTmp = arrTmp.splice(0, max)
                 }
-                console.log("'2 :>> '", arrTmp.length, currentPage, searchParams.get("page") == 0);
                 if (search.trim() !== "") {
                     
                     arrTmp = arrTmp.filter(article => article.title.includes(searchParams.get("search")))
                 }
-                console.log("'3 :>> '", arrTmp.length, currentPage, searchParams.get("page") == 0);
                 
                 if (hasPageCount) {
                     if(searchParams.get("page") == 0) {
                         setCurrentPage(1)
-                        setSearchParams({ ...searchParamsObj(), page: 1 })
+                        setSearchParams({ ...searchParamsObj() })
                     }
                     setPageCount(Math.ceil(arrTmp.length / pagination))
                     arrTmp = paginationManager(arrTmp)
-                    console.log("'4 :>> '", arrTmp.length, currentPage, searchParams.get("page") == 0);
                 }
 
                 setShowArticles(arrTmp)
@@ -118,7 +113,7 @@ const ArticlesList = ({ searchbarOff, pagination, max }) => {
             {!searchbarOff && <SearchBar value={search} onInputChange={onSearchChange} />}
             <Row className="g-2 m-4">
                 {
-                    [...showArticles].map((article, key) =>
+                    showArticles.map((article, key) =>
                     (<Col
                         key={key}
                         xs={sizing[display][0]}

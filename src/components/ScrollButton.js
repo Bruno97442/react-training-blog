@@ -33,7 +33,7 @@ const ScrollButton = () => {
       }}
       className="btn btn-link"
     >
-      <i class="bi bi-caret-up-square-fill scroll" />
+      <i className="bi bi-caret-up-square-fill scroll" />
     </button>
   );
 };

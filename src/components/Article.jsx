@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { getLinkPath } from '../Routing';
@@ -18,7 +18,7 @@ const Article = ({ cors }) => {
             <Card style={{ height: "100%", position: "relative" }}>
             <Link tabIndex="-1" className="text-decoration-none" to={getLinkPath('articles')+`/${cors.id}-${cors?.title?.match(/^\w+\s\w+\s\w*/)[0].replace(/\s/g, '-')}`}>
                 <Card.Body>
-                    <Card.Title style={{textTransform: 'uppercase'}}>
+                    <Card.Title>
                         {title}
                     </Card.Title>
                     <Card.Text>{body.substr(0, 18) + "..."}</Card.Text>

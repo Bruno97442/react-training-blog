@@ -1,11 +1,8 @@
-<<<<<<< HEAD
 /* h1,h2,h3,h3,h4,h5,p{font-family:Lato;color:#000} */
 /* h1 {
     color: #f2f2f2;
 } */
 
-=======
->>>>>>> 7d1156f242dd8e3498abcc061f6db6c43209039a
 button {
     background-image: linear-gradient(to bottom right, #384679, #283153);
     color: white!important;
@@ -14,11 +11,7 @@ button {
     border-radius: 4px;
 }
 
-<<<<<<< HEAD
 button:hover, .btn-hover:hover, .btn:hover .btn-outline-primary:hover {
     background-color: #6f42c1!important;
-=======
-.search input[type="text"]{
-    width: 67%!important;
->>>>>>> 7d1156f242dd8e3498abcc061f6db6c43209039a
+
 }

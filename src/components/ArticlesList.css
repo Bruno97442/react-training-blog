@@ -40,9 +40,6 @@
   animation-duration: 1s;
   animation-name: fade-bottom;
 }
-.active.fade-bottom {
-  animation: fade-bottom 3s ease-in;
-}
 
 @keyframes fade-bottom {
   0% {
@@ -54,25 +51,3 @@
     opacity: 1;
   }
 }
-@keyframes fade-left {
-  0% {
-    transform: translateX(-100px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes fade-right {
-  0% {
-    transform: translateX(100px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
