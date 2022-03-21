@@ -15,7 +15,7 @@ const Footer = () => {
                             <Link to={getLinkPath("articles")} className="nav-link text-reset">Articles</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to={getLinkPath("about")} className="nav-link text-reset text-center">About Us</Link>
+                            <Link to={getLinkPath("about")} className="nav-link text-reset text-center">About Me</Link>
                         </li>
                     </ul>
                     <ul className="col-12 col-md-3 list-unstyled text-center">

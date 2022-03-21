@@ -30,7 +30,6 @@ const Animations = () => {
         <img src="/images/liq-1.png" alt="" className="blob blob-1 hue-shift" />
         <img src="/images/liq-2.png" alt="" className="blob blob-2 hue-shift" />
         <img src="/images/liq-3.png" alt="" className="blob blob-3 hue-shift" />
-        {/* <img src="/images/liq-6.png" alt="" className="blob blob-4 hue-shift" /> */}
       </section>
     </div>
   );

@@ -1,3 +1,25 @@
+/* ARTICLE */
+.custom-btn {
+  background-image: linear-gradient(
+    to bottom right,
+    #384679,
+    #283153
+  ); 
+  color: white;
+}
+
+.custom-btn:hover {
+  background-image: linear-gradient(
+    to bottom right,
+    #6f42c1,
+    #6f42c1
+  ); 
+  border-color: #6f42c1;
+}
+
+
+/* ARTICLESLIST */
+
 /* Hover on List of Articles */
 .article:hover {
   transform: translateY(-0.15rem) scale(1.04);
@@ -21,14 +43,10 @@
   padding: 2rem;
 }
 
-.btn-hover:hover,
-.btn:hover .btn-outline-primary:hover {
-  background-color: #6f42c1 !important;
-}
-
 .articlesList {
   background-color: #f2f2f2;
 }
+
 /* PAGE HOME On scroll */
 
 .reveal {

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import './ScrollButton.css';
+
 const ScrollButton = () => {
     
   const [visible, setVisible] = useState(false);
@@ -31,9 +33,9 @@ const ScrollButton = () => {
         backgroundImage: "none",
         margin: "10px",
       }}
-      className="btn btn-link"
+      className="btn btn-custom btn-light scroll"
     >
-      <i class="bi bi-caret-up-square-fill scroll" />
+      <i class="bi bi-caret-up-square" />
     </button>
   );
 };

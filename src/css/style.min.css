@@ -1,11 +1,11 @@
-button {
-    background-image: linear-gradient(to bottom right, #384679, #283153);
-    color: white!important;
-    padding: 8px 4px !important;
-    border: none;
-    border-radius: 4px;
-}
-
 .search input[type="text"]{
     width: 67%!important;
 }
+
+p::first-letter{
+    text-transform: uppercase;
+  }
+
+a {
+      text-decoration: none;
+  }

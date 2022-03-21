@@ -34,7 +34,7 @@ const Article = ({ cors, min }) => {
                     <Card.Text>{body.substr(0, 18) + "..."}</Card.Text>
                 </Card.Body>
                 <div className="position-absolute d-flex align-items-end justify-content-end p-2" style={footerStyle}>
-                    <Button variant='outline-primary'className='btn-hover' >Read more <i className="bi bi-chevron-right"></i></Button>
+                    <Button variant='outline-primary'className='btn-hover custom-btn' >Read more <i className="bi bi-chevron-right"></i></Button>
                 </div>
                 </Link> 
             </Card>

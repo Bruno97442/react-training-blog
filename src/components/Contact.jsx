@@ -68,7 +68,7 @@ const Contacts = () => {
 
           <button
             type="submit"
-            style={{ background: loader ? "#ccc" : " rgb(2, 2, 110)" }}
+            style={{ background: loader ? "#ccc" : " rgb(2, 2, 110)" }} className="custom-btn"
           >
             Submit
           </button>

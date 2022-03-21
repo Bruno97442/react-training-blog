@@ -1,3 +1,4 @@
+/* composant ANIMATION pour la HOMEPAGE */
 .landing-page {
   width: 100%;
   min-height: 100vh;
@@ -49,6 +50,7 @@
   position: relative;
 }
 
+/* Animations */
 .blob-large {
   animation: move-up 2s infinite alternate;
 }
@@ -90,8 +92,6 @@
   animation: hue-shift 2s infinite alternate;
 }
 
-/* Animations */
-
 @keyframes move-up {
   from {
     transform: translateY(0);
@@ -128,7 +128,7 @@
 
   .landing-page {
     width: 100%;
-    min-height: 65vh!important;
+    min-height: 65vh !important;
     position: relative;
     z-index: 1;
     margin-top: 5rem;

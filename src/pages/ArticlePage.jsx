@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import ArticleService from "../ArticleService"
 import { getLinkPath, LinkList } from "../Routing"
+import '../components/ArticlesList.css';
 
 const ArticlePage = () => {
     const Id = parseInt(useParams().slug)
