@@ -1,0 +1,177 @@
+.landing-page {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  margin: 5rem 1rem 6rem 0;
+}
+
+.landing-page:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: 100vh;
+  background-image: url("../../public/images/bg-pat.png");
+  background-size: cover;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.content-details {
+  max-width: 80%;
+}
+
+.title {
+  font-size: 3rem;
+  color: #fff;
+  margin: 0.5rem;
+}
+
+.description {
+  color: #929fc5;
+  margin: 1.5rem 0 0.5rem 0.5rem;
+  padding-right: 10rem;
+}
+
+.newsletter {
+  margin: 0.5rem;
+}
+.image-group {
+  text-align: center;
+  position: relative;
+}
+
+.blob-large {
+  animation: move-up 2s infinite alternate;
+}
+
+.blob-bean {
+  position: absolute;
+  top: 3.5rem;
+  left: 5rem;
+  z-index: 10;
+  animation: move-down 2s infinite alternate;
+}
+
+.blob {
+  position: absolute;
+  z-index: -1;
+}
+
+.blob-1 {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.blob-2 {
+  top: 15rem;
+  right: 10rem;
+}
+
+.blob-3 {
+  top: 5rem;
+}
+
+.blob-4 {
+  top: -5rem;
+  left: -6rem;
+}
+
+.hue-shift {
+  animation: hue-shift 2s infinite alternate;
+}
+
+/* Animations */
+
+@keyframes move-up {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(2rem);
+  }
+}
+
+@keyframes move-down {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-2rem);
+  }
+}
+
+@keyframes hue-shift {
+  from {
+    filter: hue-rotate(0);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* Media queries */
+
+@media screen and (max-width: 768px) {
+  .nav {
+    align-items: center;
+  }
+
+  .landing-page {
+    width: 100%;
+    min-height: 65vh!important;
+    position: relative;
+    z-index: 1;
+    margin-top: 5rem;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+  }
+  .content-details {
+    order: 1;
+    max-width: 100%;
+  }
+  .title {
+    font-size: 1.9rem;
+    width: 14rem;
+  }
+  .description {
+    font-size: 1rem;
+  }
+  .image-group {
+    margin-top: 10rem;
+  }
+
+  .blob-large,
+  .blob-bean,
+  .blob-1 {
+    display: none;
+  }
+
+  .blob-2 {
+    left: 0rem;
+    bottom: 13rem;
+    top: revert;
+    width: 20%;
+  }
+
+  .blob-3 {
+    right: 4rem;
+    bottom: -25rem;
+    width: 60%;
+  }
+
+  .blob-4 {
+    display: none;
+  }
+}

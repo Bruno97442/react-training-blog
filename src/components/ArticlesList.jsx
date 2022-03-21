@@ -51,9 +51,9 @@ const ArticlesList = ({ searchbarOff, pagination, max = 20 }) => {
         setShowArticles(arrTmp)
     }, [articleService.getAll()])
     return (
-        <section className="articles">
+        <section>
             {!searchbarOff && <SearchBar value={search} onInputChange={onSearchChange} />}
-            <Row className="g-2">
+            <Row className="g-2 m-4">
                 {
                     showArticles.map((article, key) =>
                     (<Col
