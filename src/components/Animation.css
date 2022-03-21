@@ -175,20 +175,3 @@
     display: none;
   }
 }
-
-/* transition on click link  */
-
-@keyframes transitionIn {
-    from {
-        opacity: 0;
-        transform: rotateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: rotateY(0);
-    }
-}
-
-.transition{
-    animation: transitionIn 1s;
-}

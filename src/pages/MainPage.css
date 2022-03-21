@@ -29,3 +29,7 @@
 .article-page{
     animation: transitionIn 0.75s;
 }
+
+/* button[type="button"]:hover, button:hover, .btn-hover:hover, .btn:hover, .btn-outline-primary:hover {
+    background-color: #6f42c1!important;
+} */

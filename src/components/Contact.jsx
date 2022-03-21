@@ -36,7 +36,7 @@ const Contacts = () => {
 
   return (
     <div>
-      <form className="form justify-content-center transition" onSubmit={handleSubmit}>
+      <form className="form justify-content-center" onSubmit={handleSubmit}>
         
         <div className="form-box"><h1 className="text-center">Contact Me</h1>
           <label>Name</label>

@@ -5,9 +5,6 @@ import { Nav, Navbar, NavDropdown, Container } from "react-bootstrap";
 import { GROUPS, LinkList} from "../Routing";
 
 const Navbars = () => {
-  const purple = {
-    backgroundColor: "#6f42c1",
-  };
 
   return (
     <header className="sticky-top">

@@ -1,3 +1,4 @@
+/* Hover on List of Articles */
 .article:hover {
   transform: translateY(-0.15rem) scale(1.04);
 }
@@ -7,9 +8,6 @@
   margin: 0.3rem;
 }
 
-/* .shadow:hover {
-  box-shadow: 0 0.5rem 1rem -0.25rem rgba(0, 0, 0, 0.3);
-} */
 .marginSearchBar {
   margin: 1rem;
   padding: 1rem;
@@ -31,7 +29,7 @@
 .articlesList {
   background-color: #f2f2f2;
 }
-/* On scroll */
+/* PAGE HOME On scroll */
 
 .reveal {
   position: relative;

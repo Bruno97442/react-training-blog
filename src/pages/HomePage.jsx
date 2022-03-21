@@ -1,19 +1,20 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import ArticlesList from '../components/ArticlesList';
 import About from '../components/About';
 import Contact from '../components/Contact';
 import Animation from '../components/Animation';
 import './MainPage.css';
+import ScrollButton from '../components/ScrollButton';
 
 const HomePage = () => {
 
     function reveal() {
-        var reveals = document.querySelectorAll(".reveal");
+        let reveals = document.querySelectorAll(".reveal");
       
-        for (var i = 0; i < reveals.length; i++) {
-          var windowHeight = window.innerHeight;
-          var elementTop = reveals[i].getBoundingClientRect().top;
-          var elementVisible = 150;
+        for (let i = 0; i < reveals.length; i++) {
+          let windowHeight = window.innerHeight;
+          let elementTop = reveals[i].getBoundingClientRect().top;
+          let elementVisible = 150;
       
           if (elementTop < windowHeight - elementVisible) {
             reveals[i].classList.add("active");
@@ -24,8 +25,9 @@ const HomePage = () => {
       }
       
       window.addEventListener("scroll", reveal);
+      
     return (
-        <Fragment>
+        <>
             <div>
                 <Animation/>
             </div>
@@ -39,7 +41,8 @@ const HomePage = () => {
             <div className='grey reveal'>
                 <Contact />
             </div>
-        </Fragment>
+            <ScrollButton/>
+        </>
     );
 };
 

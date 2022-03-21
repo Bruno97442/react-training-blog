@@ -116,13 +116,6 @@ const ArticlesList = ({ searchbarOff, pagination, max }) => {
     return (
         <section>
             {!searchbarOff && <SearchBar value={search} onInputChange={onSearchChange} />}
-
-            <PaginationBtns
-                displayNone={!pagination || pageCount === 1}
-                currentPage={+searchParams.get("page")}
-                pageCount={pageCount}
-                rootLink={getLinkPath("articles")}
-                onClick={paginationBtnsHandler} />
             <Row className="g-2 m-4">
                 {
                     [...showArticles].map((article, key) =>
